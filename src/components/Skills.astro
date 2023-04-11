@@ -1,0 +1,124 @@
+---
+/*
+    What to put in Developer skills:
+    - Javascript
+    - Typescript
+    - Node JS
+    - Sveltekit
+    - Tailwind
+    - SASS
+    - HTML
+    - CSS
+    - Astro
+    - Vite
+
+    - Python
+    - R
+    - Machine Learning
+    - Computer Vision
+*/
+---
+
+<div
+	id="skills"
+	class="w-full h-fit min-h-screen flex justify-center lg:items-center px-5 py-8 lg:flex-row flex-col items-start"
+>
+	<div class="md:mr-10 sm:mr-0 max-w-2xl">
+		<h2 class="font-bold text-2xl mb-2">Developer experience</h2>
+		<p>
+			I started programming with Python since I was 14 years old. I
+			learnt it from a coding school in my city. Eventually, I decided
+			to explore programming on my own.
+			<br /><br />
+			In my journey of programming, I learnt image processing, web scraping,
+			Discord bot development and web development.
+			<br /><br />
+			In my college course, I learnt many data science related technologies
+			like R, Machine Learning and Computer Vision. I explore web development
+			as a hobby, watching YouTube tutorials as my main source of knowledge.
+		</p>
+		<h2 class="font-bold text-2xl mb-2 mt-8">Other skills</h2>
+		<p>
+			Besides programming, I have hobbies including music and playing
+			Valorant.
+			<br /><br />
+			I play the guitar and piano decently. I have performed as a guitarist
+			in several performances throughout high school and college.
+			<br /><br />
+			I occasionally play Valorant with my friends. I peaked at the rank
+			Platinum 3, but decided to just play Valorant casually with friends
+			and streamers.
+		</p>
+	</div>
+
+	<div class="max-w-lg sm:mt-10">
+		<h2 class="font-bold text-xl mb-2">Web Development Technologies:</h2>
+		<div class="flex flex-wrap flex-row">
+			<div class="item hover:bg-yellow-400 hover:text-black">
+				Javascript
+			</div>
+			<div class="item hover:bg-blue-500">Typescript</div>
+			<div class="item hover:bg-green-500">Node JS</div>
+			<div class="item hover:bg-orange-500">Sveltekit</div>
+			<div class="item hover:bg-blue-400">Tailwind</div>
+			<div class="item hover:bg-pink-400">SASS</div>
+			<div class="item hover:bg-orange-500">HTML</div>
+			<div class="item hover:bg-blue-500">CSS</div>
+			<div class="item hover:bg-gray-800">Astro</div>
+			<div class="item hover:bg-purple-600">Vite</div>
+		</div>
+		<h2 class="font-bold text-xl mb-2 mt-8">Data Science Technologies</h2>
+		<div class="flex flex-wrap flex-row">
+			<div class="item linear-gradient python">Python</div>
+			<div class="item hover:bg-blue-400">R</div>
+			<div class="item hover:bg-purple-600">Machine Learning</div>
+			<div class="item linear-gradient opencv">OpenCV</div>
+			<div class="item hover:bg-blue-700">BeautifulSoup4</div>
+			<div class="item hover:bg-green-600">Selenium</div>
+			<div class="item hover:bg-blue-500">Pandas</div>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	.item {
+		@apply mr-2 mb-2 py-1 px-2 rounded-md transition-all duration-500 ease-in-out cursor-default;
+		background: #555;
+	}
+
+	@keyframes appear {
+		0% {
+			opacity: 0.1;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.linear-gradient:hover {
+		&.python {
+			background: linear-gradient(
+				90deg,
+				#4b8bbe 0%,
+				#306998 50%,
+				#ffd43b 51%,
+				#f0c808 100%
+			);
+		}
+
+		&.opencv {
+			background: linear-gradient(
+				90deg,
+				#ff0000 0%,
+				#ff0000 32%,
+				#00ff00 33%,
+				#00ff00 65%,
+				#0000ff 66%,
+				#0000ff 100%
+			);
+		}
+
+		// appear with transition once
+		animation: appear 500ms ease-in-out 1;
+	}
+</style>

@@ -1,0 +1,46 @@
+---
+import pfp from "../images/pfp.webp?url";
+---
+
+<div id="about" class="w-full flex justify-center items-center h-fit px-5 py-8">
+	<div
+		id="about-layout"
+		class="flex justify-center items-center w-full flex-col lg:flex-row md:flex-col sm:flex-col"
+	>
+		<div
+			id="pfp-div"
+			class="flex items-center justify-center w-fit mr-10"
+		>
+			<img src={pfp} alt="ryan" class="w-72 rounded-lg mb-3 lg:mb-0" />
+		</div>
+		<div class="text-lg max-w-2xl">
+			Hi! My name is Ryan, I am a college student based in Malaysia!
+			<br /><br />
+			I speak fluent English and Mandarin Chinese. I am currently studying
+			Computer Science (focused on Data Science) with an interest in Software
+			Development!
+			<br /><br />
+			On the side, I like to stream on <a
+				class="underline text-purple-400"
+				target="_blank"
+				href="https://twitch.tv/RyanPython">Twitch</a
+			> and upload videos on <a
+				class="underline text-red-500"
+				target="_blank"
+				href="https://youtube.com/@RyanPython">YouTube</a
+			>. On Twitch, I stream study sessions and occasionally stream
+			gaming content. On YouTube, I make videos on projects I have
+			worked on, along with some content related to gaming.
+			<br /><br />
+			On top of that, I create open source overlays for streamers on Twitch,
+			particularly for coworking and study streamers.
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	#about {
+		min-height: 75vh;
+		background: #222222;
+	}
+</style>

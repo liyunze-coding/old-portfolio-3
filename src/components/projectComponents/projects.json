@@ -1,0 +1,32 @@
+[
+    {
+        "name": "PetGPT",
+        "description": "PetGPT is a UI clone of ChatGPT, inspired by CatGPT.",
+        "imageURL":"./projectComponents/ProjectMedia/PetGPT.png",
+        "tags":["SvelteKit", "Tailwind", "Typescript"]
+    },
+    {
+        "name":"Inertia",
+        "description":"Inertia is inspired by Momentum, a Chrome extension that replaces the new tab page with a customizable dashboard featuring to-do lists, weather, and more.",
+        "imageURL":"",
+        "tags":["Svelte", "Typescript"]
+    }, 
+    {
+        "name":"Chat-Task-Tic overlay",
+        "description":"A task list overlay for coworking and study streamers, allows users to submit tasks from Twitch chat.",
+        "imageURL":"",
+        "tags":["Javascript", "HTML", "CSS", "ComfyJS"]
+    },
+    {
+        "name":"Streamodoro",
+        "description":"A pomodoro timer for coworking and study streamers, allows streamers to set the time for work time and break time",
+        "imageURL":"",
+        "tags":["Javascript", "HTML", "CSS", "ComfyJS"]
+    },
+    {
+        "name":"Chess bot",
+        "description":"A chess bot that takes over your mouse and plays chess for you",
+        "imageURL":"",
+        "tags":["Python", "OpenCV", "PyAutoGUI"]
+    }
+]
