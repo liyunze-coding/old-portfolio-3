@@ -1,24 +1,176 @@
 ---
 ---
 
-<div
-	id="navbar"
-	class="fixed z-10 flex flex-row justify-end w-full float-right"
->
-	<div id="navbar-div" class="pt-5 pb-1">
-		<a class="px-5" href="#home">home</a>
-		<a class="px-5" href="#about">about</a>
-		<a class="px-5" href="#skills">skills</a>
-		<a class="px-5" href="#projects">projects</a>
-		<a class="px-5" href="#contact">contact</a>
+<div class="absolute w-full">
+	<label class="flex hamburger-menu lg:hidden">
+		<input type="checkbox" />
+	</label>
+	<aside class="sidebar">
+		<nav class="flex flex-col">
+			<a
+				class="sidebar-url px-5 py-2 pt-5 hover:text-blue-400"
+				href="#home">home</a
+			>
+			<a
+				class="sidebar-url px-5 py-2 hover:text-blue-400"
+				href="#about">about</a
+			>
+			<a
+				class="sidebar-url px-5 py-2 hover:text-blue-400"
+				href="#skills">skills</a
+			>
+			<a
+				class="sidebar-url px-5 py-2 hover:text-blue-400"
+				href="#projects">projects</a
+			>
+			<a
+				class="sidebar-url px-5 py-2 hover:text-blue-400"
+				href="#contact">contact</a
+			>
+		</nav>
+	</aside>
+	<div id="navbar" class="absolute top-0 w-full hidden lg:flex">
+		<div
+			id="navbar-div"
+			class="pt-2 mr-5 uppercase w-full pb-1 flex flex-row justify-end"
+		>
+			<a
+				class="px-3 mx-2 py-1 text-white hover:bg-gray-200 hover:text-black transition-colors duration-500 rounded-md"
+				href="#home">home</a
+			>
+			<a
+				class="px-3 mx-2 py-1 text-white hover:bg-gray-200 hover:text-black transition-colors duration-500 rounded-md"
+				href="#about">about</a
+			>
+			<a
+				class="px-3 mx-2 py-1 text-white hover:bg-gray-200 hover:text-black transition-colors duration-500 rounded-md"
+				href="#skills">skills</a
+			>
+			<a
+				class="px-3 mx-2 py-1 text-white hover:bg-gray-200 hover:text-black transition-colors duration-500 rounded-md"
+				href="#projects">projects</a
+			>
+			<a
+				class="px-3 mx-2 py-1 text-white hover:bg-gray-200 hover:text-black transition-colors duration-500 rounded-md"
+				href="#contact">contact</a
+			>
+		</div>
 	</div>
 </div>
 
 <style>
-	@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap");
-	#navbar-div {
-		font-family: "Raleway", sans-serif;
-		font-weight: 400;
-		background: rgba(18, 18, 18, 0.3);
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	body {
+		margin: 0;
+	}
+
+	:root {
+		--bar-width: 40px;
+		--bar-height: 3px;
+		--hamburger-gap: 10px;
+
+		--color: #fff;
+
+		--hamburger-margin: 19px;
+		--animation-timing: 200ms ease-in-out;
+
+		--hamburger-height: calc(
+			var(--bar-height) * 3 + var(--hamburger-gap) * 2
+		);
+	}
+
+	.hamburger-menu {
+		--x-width: calc(var(--hamburger-height) * 1.41421356237309504);
+
+		position: absolute;
+		top: var(--hamburger-margin);
+		left: var(--hamburger-margin);
+
+		flex-direction: column;
+		gap: var(--hamburger-gap);
+
+		width: max-content;
+		z-index: 20;
+		cursor: pointer;
+	}
+
+	.hamburger-menu:has(input:focus-visible)::before,
+	.hamburger-menu:has(input:focus-visible)::after,
+	.hamburger-menu input:focus-visible {
+		border: 1px solid var(--color);
+		box-shadow: 0 0 0 1px var(--color);
+	}
+
+	.hamburger-menu::before,
+	.hamburger-menu::after,
+	.hamburger-menu input {
+		content: "";
+		width: var(--bar-width);
+		height: var(--bar-height);
+		background: var(--color);
+		border-radius: 9999px;
+
+		transform-origin: left center;
+
+		transition: opacity var(--animation-timing),
+			width var(--animation-timing), rotate var(--animation-timing);
+	}
+
+	.hamburger-menu input {
+		appearance: none;
+		padding: 0;
+		margin: 0;
+		outline: none;
+		pointer-events: none;
+	}
+
+	.hamburger-menu:has(input:checked)::before {
+		rotate: 45deg;
+		width: var(--x-width);
+		transform: translateY(calc(var(--bar-height / -2)));
+	}
+
+	.hamburger-menu:has(input:checked)::after {
+		rotate: -45deg;
+		width: var(--x-width);
+		transform: translateY(calc(var(--bar-height / 2)));
+	}
+
+	.hamburger-menu input:checked {
+		opacity: 0;
+		width: 0;
+	}
+
+	.sidebar {
+		translate: -100%;
+		padding-top: calc(var(--hamburger-height) + var(--hamburger-margin));
+		min-height: 100vh;
+
+		width: clamp(100px, 50%, 500px);
+
+		z-index: 100;
+		transition: translate var(--animation-timing);
+		background: #141414;
+	}
+
+	.hamburger-menu:has(input:checked) + .sidebar {
+		translate: 0;
 	}
 </style>
+
+<script defer is:inline>
+	// fetch all .sidebar-url elements
+	const sidebar = document.querySelectorAll(".sidebar-url");
+
+	// for each sidebar url, if clicked on, uncheck the checkbox
+	sidebar.forEach((url) => {
+		url.addEventListener("click", () => {
+			document.querySelector("input").checked = false;
+		});
+	});
+</script>

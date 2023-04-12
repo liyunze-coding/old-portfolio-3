@@ -3,6 +3,7 @@ import Inertia from "./projectComponents/projectMedia/Inertia.png";
 import ChatTaskTic from "./projectComponents/projectMedia/chat-task-tic-thumbnail.png";
 import Streamodoro from "./projectComponents/projectMedia/streamodoro.png";
 import chessBotDemo from "./projectComponents/projectMedia/chess-bot-demo.png";
+import spotifyOverlay from "./projectComponents/projectMedia/spotify_overlay.png";
 
 const slides = [
 	{
@@ -30,7 +31,7 @@ const slides = [
 			Demo: "https://liyunze-coding.github.io/inertia",
 			Github: "https://github.com/liyunze-coding/inertia",
 		},
-		tags: ["Svelte", "Typescript"],
+		tags: ["Svelte", "Typescript", "OpenWeatherMap API"],
 	},
 	{
 		name: "Chat-Task-Tic overlay",
@@ -41,7 +42,7 @@ const slides = [
 			alt: "Chat-Task-Tic overlay",
 		},
 		links: {
-			Github: "https://liyunze-coding.github.io/chat-task-tic-overlay",
+			Github: "https://github.com/liyunze-coding/chat-task-tic-overlay",
 		},
 		tags: ["Javascript", "HTML", "CSS", "ComfyJS"],
 	},
@@ -54,9 +55,29 @@ const slides = [
 			alt: "Streamodoro",
 		},
 		links: {
-			Github: "https://liyunze-coding.github.io/streamodoro",
+			Github: "https://github.com/liyunze-coding/streamodoro",
 		},
 		tags: ["Javascript", "HTML", "CSS", "ComfyJS"],
+	},
+	{
+		name: "Spotify overlay",
+		description:
+			"An OBS overlay that displays the current track that you're listening to on Spotify",
+		image: {
+			src: spotifyOverlay,
+			alt: "Spotify overlay",
+		},
+		links: {
+			Github: "https://github.com/liyunze-coding/spotify-widget-for-obs",
+		},
+		tags: [
+			"Javascript",
+			"Node JS",
+			"Express",
+			"Spotify API",
+			"HTML",
+			"CSS",
+		],
 	},
 	{
 		name: "Chess bot",
@@ -68,6 +89,7 @@ const slides = [
 		},
 		links: {
 			Github: "https://github.com/liyunze-coding/chess-playing-bot-v2",
+			Video: "https://imgur.com/a/UAgRIR1",
 		},
 		tags: ["Python", "OpenCV", "PyAutoGUI"],
 	},

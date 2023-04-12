@@ -3,7 +3,7 @@
 	let date = new Date();
 	let hour = date.getHours();
 
-	let greeting:string = "morning";
+	let greeting: string = "morning";
 
 	if (hour >= 12 && hour < 18) {
 		greeting = "afternoon";
@@ -54,7 +54,10 @@
 	}, 3000);
 </script>
 
-<div id="home" class="h-screen w-screen flex flex-col justify-center items-center">
+<div
+	id="home"
+	class="h-screen w-full flex flex-col justify-center items-center"
+>
 	<div class="w-3/4 h-fit flex flex-col items-center">
 		<div class="text-lg text-center">Good {greeting}, I'm</div>
 		<div
@@ -63,7 +66,7 @@
 		>
 			RyanPython
 		</div>
-		<div class="text-4xl text-center translate-x-3">
+		<div class="text-2xl lg:text-4xl text-center translate-x-3 -z-10">
 			I am a <span id="occupation">{roleState}</span><span
 				class="animate-blink">|</span
 			>
