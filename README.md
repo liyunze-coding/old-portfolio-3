@@ -39,9 +39,9 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## 📱 Socials
 
-<a href="https://www.youtube.com/channel/UC0ZQZ1XZ1Z0ZQZ1X">
+<a href="https://www.youtube.com/channel/UC0ZQZ1XZ1Z0ZQZ1X" target="_blank">
 <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white">
 </a>
-<a href="https://www.twitch.tv/ryanpython">
+<a href="https://www.twitch.tv/ryanpython" target="_blank">
 <img src="https://img.shields.io/twitch/status/ryanpython?color=9146FF&label=Twitch&logo=twitch&logoColor=white&style=for-the-badge">
 </a>
