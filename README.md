@@ -13,9 +13,13 @@
     <a href="https://vercel.com/"><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"></a>
 </div>
 
+<br>
+
 <div align="center">
     <img src="./src/images/homepage.png" height="250px">
 </div>
+
+---
 
 ## 📝 About
 
@@ -35,5 +39,9 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## 📱 Socials
 
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UC0ZQZ1XZ1Z0ZQZ1X)
-[![Twitch Status](https://img.shields.io/twitch/status/ryanpython?color=9146FF&label=Twitch&logo=twitch&logoColor=white&style=for-the-badge)](https://www.twitch.tv/ryanpython)
+<a href="https://www.youtube.com/channel/UC0ZQZ1XZ1Z0ZQZ1X">
+<img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white">
+</a>
+<a href="https://www.twitch.tv/ryanpython">
+<img src="https://img.shields.io/twitch/status/ryanpython?color=9146FF&label=Twitch&logo=twitch&logoColor=white&style=for-the-badge">
+</a>
