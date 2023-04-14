@@ -1,9 +1,9 @@
-import PetGPT from "./projectComponents/projectMedia/PetGPT.png";
-import Inertia from "./projectComponents/projectMedia/Inertia.png";
-import ChatTaskTic from "./projectComponents/projectMedia/chat-task-tic-thumbnail.png";
-import Streamodoro from "./projectComponents/projectMedia/streamodoro.png";
-import chessBotDemo from "./projectComponents/projectMedia/chess-bot-demo.png";
-import spotifyOverlay from "./projectComponents/projectMedia/spotify_overlay.png";
+import PetGPT from "./projectComponents/projectMedia/PetGPT.webp";
+import Inertia from "./projectComponents/projectMedia/Inertia.webp";
+import ChatTaskTic from "./projectComponents/projectMedia/chat-task-tic-thumbnail.webp";
+import Streamodoro from "./projectComponents/projectMedia/streamodoro.webp";
+import chessBotDemo from "./projectComponents/projectMedia/chess-bot-demo.webp";
+import spotifyOverlay from "./projectComponents/projectMedia/spotify_overlay.webp";
 
 const slides = [
 	{
