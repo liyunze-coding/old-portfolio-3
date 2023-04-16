@@ -1,6 +1,8 @@
 <div class="w-full">
 	<label class="fixed flex hamburger-menu bg-primary p-4 rounded-lg">
+		<span class="top-bun"></span>
 		<input type="checkbox" />
+		<span class="bottom-bun"></span>
 	</label>
 	<aside class="sidebar flex z-20">
 		<nav class="flex flex-col">
@@ -82,25 +84,24 @@
 		z-index: 30;
 		cursor: pointer;
 
+		rotate: 180deg;
+
 		transition: translate var(--animation-timing);
 	}
 
-	.hamburger-menu:has(input:focus-visible)::before,
-	.hamburger-menu:has(input:focus-visible)::after,
 	.hamburger-menu input:focus-visible {
 		border: 1px solid var(--background);
 		box-shadow: 0 0 0 1px var(--foreground);
 	}
 
-	.hamburger-menu::before,
-	.hamburger-menu::after,
-	.hamburger-menu input {
+	.hamburger-menu input,
+	.hamburger-menu span {
 		content: "";
 		width: var(--bar-width);
 		height: var(--bar-height);
 		background-color: white;
 		border-radius: 9999px;
-		transform-origin: right center;
+		transform-origin: left center;
 		transition: opacity var(--animation-timing),
 			width var(--animation-timing), rotate var(--animation-timing),
 			translate var(--animation-timing),
@@ -115,14 +116,14 @@
 		pointer-events: none;
 	}
 
-	.hamburger-menu:has(input:checked)::before {
-		rotate: -45deg;
+	.hamburger-menu .top-bun.active {
+		rotate: 45deg;
 		width: var(--x-width);
 		translate: 0 calc(var(--bar-height) / -2);
 	}
 
-	.hamburger-menu:has(input:checked)::after {
-		rotate: 45deg;
+	.hamburger-menu .bottom-bun.active {
+		rotate: -45deg;
 		width: var(--x-width);
 		translate: 0 calc(var(--bar-height) / 2);
 	}
@@ -148,23 +149,40 @@
 		min-height: 100vh;
 	}
 
-	.hamburger-menu:has(input:checked) + .sidebar {
+	/* .hamburger-menu:has(input:checked) + .sidebar {
 		translate: 0;
-	}
+	} */
 </style>
 
 <script defer is:inline>
 	// fetch all .sidebar-url elements
 	const sidebar = document.querySelectorAll(".sidebar-url");
+	const hamburger = document.querySelector(".hamburger-menu");
+	const checkbox = document.querySelector("input");
+
+	const topBun = document.querySelector(".top-bun");
+	const bottomBun = document.querySelector(".bottom-bun");
+
+	const openSideBar = () => {
+		checkbox.checked = true;
+		document.querySelector(".sidebar").style.translate = "0";
+		topBun.classList.add("active");
+		bottomBun.classList.add("active");
+	};
+
+	const closeSideBar = () => {
+		checkbox.checked = false;
+		document.querySelector(".sidebar").style.translate = "100%";
+		topBun.classList.remove("active");
+		bottomBun.classList.remove("active");
+	};
 
 	// for each sidebar url, if clicked on, uncheck the checkbox
 	sidebar.forEach((url) => {
 		url.addEventListener("click", () => {
-			document.querySelector("input").checked = false;
+			closeSideBar();
 		});
 	});
-
-	const hamburger = document.querySelector(".hamburger-menu");
 
 	if (window.innerWidth < 768) {
 		hamburger.style.translate = "0 0";
@@ -175,7 +193,26 @@
 			hamburger.style.translate = "0 0";
 		} else {
 			hamburger.style.translate = "0 -200px";
-			document.querySelector("input").checked = false;
+			closeSideBar();
+		}
+	});
+
+	// if window is resized, check if it's less than 768px
+	window.addEventListener("resize", () => {
+		if (window.innerWidth < 768) {
+			hamburger.style.translate = "0 0";
+		} else {
+			hamburger.style.translate = "0 -200px";
+			closeSideBar();
+		}
+	});
+
+	// if checked, translate the sidebar
+	checkbox.addEventListener("change", () => {
+		if (checkbox.checked) {
+			openSideBar();
+		} else {
+			closeSideBar();
 		}
 	});
 </script>
