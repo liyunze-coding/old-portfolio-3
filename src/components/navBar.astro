@@ -1,14 +1,14 @@
 ---
 ---
 
-<div class="absolute w-full">
-	<label class="flex hamburger-menu lg:hidden">
+<div class="w-full">
+	<label class="fixed flex hamburger-menu bg-primary p-4 rounded-lg">
 		<input type="checkbox" />
 	</label>
-	<aside class="sidebar">
+	<aside class="sidebar flex z-20">
 		<nav class="flex flex-col">
 			<a
-				class="sidebar-url px-5 py-2 pt-5 hover:text-blue-400"
+				class="sidebar-url px-5 py-2 mt-10 hover:text-blue-400"
 				href="#home">home</a
 			>
 			<a
@@ -59,51 +59,45 @@
 </div>
 
 <style>
-	*,
-	*::before,
-	*::after {
-		box-sizing: border-box;
-	}
-
-	body {
-		margin: 0;
-	}
-
 	:root {
-		--bar-width: 40px;
-		--bar-height: 3px;
-		--hamburger-gap: 10px;
-
-		--color: #fff;
-
-		--hamburger-margin: 19px;
+		--bar-width: 30px;
+		--bar-height: 4px;
+		--hamburger-gap: 6px;
+		--foreground: #333;
+		--background: white;
+		--hamburger-margin: 20px;
 		--animation-timing: 200ms ease-in-out;
-
 		--hamburger-height: calc(
 			var(--bar-height) * 3 + var(--hamburger-gap) * 2
 		);
 	}
 
 	.hamburger-menu {
-		--x-width: calc(var(--hamburger-height) * 1.41421356237309504);
+		--x-width: calc(var(--hamburger-height) * 1.41421356237);
 
-		position: absolute;
-		top: var(--hamburger-margin);
-		left: var(--hamburger-margin);
-
+		translate: 0 -200px;
 		flex-direction: column;
-		gap: var(--hamburger-gap);
 
+		gap: var(--hamburger-gap);
 		width: max-content;
-		z-index: 20;
+		top: var(--hamburger-margin);
+		right: var(--hamburger-margin);
+		z-index: 30;
 		cursor: pointer;
+
+		transition: translate var(--animation-timing);
+	}
+
+	.hamburger-menu:has(input:checked) {
+		--foreground: white;
+		--background: #333;
 	}
 
 	.hamburger-menu:has(input:focus-visible)::before,
 	.hamburger-menu:has(input:focus-visible)::after,
 	.hamburger-menu input:focus-visible {
-		border: 1px solid var(--color);
-		box-shadow: 0 0 0 1px var(--color);
+		border: 1px solid var(--background);
+		box-shadow: 0 0 0 1px var(--foreground);
 	}
 
 	.hamburger-menu::before,
@@ -112,13 +106,13 @@
 		content: "";
 		width: var(--bar-width);
 		height: var(--bar-height);
-		background: var(--color);
+		background-color: white;
 		border-radius: 9999px;
-
 		transform-origin: left center;
-
 		transition: opacity var(--animation-timing),
-			width var(--animation-timing), rotate var(--animation-timing);
+			width var(--animation-timing), rotate var(--animation-timing),
+			translate var(--animation-timing),
+			background-color var(--animation-timing);
 	}
 
 	.hamburger-menu input {
@@ -132,13 +126,13 @@
 	.hamburger-menu:has(input:checked)::before {
 		rotate: 45deg;
 		width: var(--x-width);
-		transform: translateY(calc(var(--bar-height / -2)));
+		translate: 0 calc(var(--bar-height) / -2);
 	}
 
 	.hamburger-menu:has(input:checked)::after {
 		rotate: -45deg;
 		width: var(--x-width);
-		transform: translateY(calc(var(--bar-height / 2)));
+		translate: 0 calc(var(--bar-height) / 2);
 	}
 
 	.hamburger-menu input:checked {
@@ -147,15 +141,19 @@
 	}
 
 	.sidebar {
-		translate: -100%;
-		padding-top: calc(var(--hamburger-height) + var(--hamburger-margin));
-		min-height: 100vh;
-
-		width: clamp(100px, 50%, 500px);
-
-		z-index: 100;
+		position: fixed;
+		top: 0;
+		right: 0;
 		transition: translate var(--animation-timing);
-		background: #141414;
+		translate: 100%;
+		padding: 0.5rem 1rem;
+		padding-top: calc(
+			var(--hamburger-height) + var(--hamburger-margin) + 1rem
+		);
+		background-color: var(--foreground);
+		color: var(--background);
+		max-width: 10rem;
+		min-height: 100vh;
 	}
 
 	.hamburger-menu:has(input:checked) + .sidebar {
@@ -172,5 +170,20 @@
 		url.addEventListener("click", () => {
 			document.querySelector("input").checked = false;
 		});
+	});
+
+	const hamburger = document.querySelector(".hamburger-menu");
+
+	if (window.innerWidth < 768) {
+		hamburger.style.translate = "0 0";
+	}
+
+	window.addEventListener("scroll", () => {
+		if (window.scrollY > 50 || window.innerWidth < 768) {
+			hamburger.style.translate = "0 0";
+		} else {
+			hamburger.style.translate = "0 -200px";
+			document.querySelector("input").checked = false;
+		}
 	});
 </script>

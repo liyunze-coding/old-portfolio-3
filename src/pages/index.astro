@@ -8,15 +8,13 @@ import Contact from "../components/Contact.astro";
 
 import Socials from "../components/Socials.astro";
 import NavBar from "../components/navBar.astro";
-import BackToTop from "../components/backToTop.astro";
 ---
 
 <Layout title="Ryan's Portfolio">
 	<NavBar />
 	<Socials />
-	<BackToTop />
 
-	<Intro client:only />
+	<Intro client:load />
 	<About />
 	<Skills />
 	<Projects client:visible />

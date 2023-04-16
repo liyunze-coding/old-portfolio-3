@@ -23,6 +23,9 @@ module.exports = {
 				blink: "animateBlink 1s linear infinite",
 				gradient: "gradient 15s ease infinite",
 			},
+			colors: {
+				primary: "#191919",
+			},
 		},
 	},
 	plugins: [],

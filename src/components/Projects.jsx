@@ -13,7 +13,7 @@ export default () => {
 	return (
 		<div
 			id="projects"
-			className="w-full min-h-screen h-fit flex justify-center items-center bg-gray-900 pt-12"
+			className="w-full min-h-screen h-fit relative flex justify-center items-center bg-gray-900 pt-12 z-10"
 		>
 			<Swiper
 				modules={[Navigation, Pagination, A11y, EffectFade]}
@@ -60,7 +60,7 @@ export default () => {
 													target="_blank"
 													rel="noreferrer"
 													key={link}
-													className="bg-blue-600 text-white hover:bg-gray-200 hover:text-blue-600 mr-2 rounded-lg px-2 py-1 cursor-pointer"
+													className="bg-blue-600 text-white hover:bg-gray-200 hover:text-blue-600 mr-2 rounded-lg px-2 py-1 cursor-pointer z-10"
 												>
 													{link}
 												</a>
