@@ -37,7 +37,7 @@ export default () => {
 								</div>
 								<div className="flex items-center justify-center">
 									<img
-										className="w-3/4 md:w-1/2 mb-5"
+										className="w-3/4 md:w-1/2 mb-5 rounded-lg"
 										src={slide.image.src}
 										alt={slide.image.alt}
 									/>
