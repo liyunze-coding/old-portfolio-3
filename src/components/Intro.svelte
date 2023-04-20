@@ -20,16 +20,18 @@
 
 	function typeOutRole() {
 		// type out next role
-		let type = setInterval(() => {
-			if (role[roleState.length]) {
-				roleState += role[roleState.length];
-			}
+		if (roleEmpty) {
+			let type = setInterval(() => {
+				if (role[roleState.length]) {
+					roleState += role[roleState.length];
+				}
 
-			if (roleState.length == role.length) {
-				clearInterval(type);
-				roleEmpty = false;
-			}
-		}, 70);
+				if (roleState.length == role.length) {
+					clearInterval(type);
+					roleEmpty = false;
+				}
+			}, 70);
+		}
 	}
 
 	function backspaceRole() {
