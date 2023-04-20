@@ -18,16 +18,21 @@
 	let counter: number = 0;
 	let roleEmpty: boolean = false;
 
-	// change role
-	setInterval(async () => {
-		// cycle to next role
-		if (counter >= roles.length) {
-			counter = 0;
-		}
+	function typeOutRole() {
+		// type out next role
+		let type = setInterval(() => {
+			if (role[roleState.length]) {
+				roleState += role[roleState.length];
+			}
 
-		role = roles[counter];
-		counter++;
+			if (roleState.length == role.length) {
+				clearInterval(type);
+				roleEmpty = false;
+			}
+		}, 70);
+	}
 
+	function backspaceRole() {
 		// backspace on current role
 		if (!roleEmpty) {
 			let backspace = setInterval(() => {
@@ -37,21 +42,30 @@
 					clearInterval(backspace);
 					roleEmpty = true;
 				}
-			}, 100);
-		} else {
-			// type out next role
-			let type = setInterval(() => {
-				if (role[roleState.length]) {
-					roleState += role[roleState.length];
-				}
-
-				if (roleState.length == role.length) {
-					clearInterval(type);
-					roleEmpty = false;
-				}
-			}, 100);
+			}, 70);
 		}
-	}, 3000);
+	}
+
+	// sleep function
+	function sleep(ms: number) {
+		return new Promise((resolve) => setTimeout(resolve, ms));
+	}
+
+	// change role every 3 seconds
+	setInterval(async () => {
+		role = roles[counter];
+
+		typeOutRole();
+
+		await sleep(4000);
+		backspaceRole();
+
+		counter++;
+
+		if (counter == roles.length) {
+			counter = 0;
+		}
+	}, 5000);
 </script>
 
 <div

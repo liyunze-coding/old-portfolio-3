@@ -23,9 +23,11 @@
 	id="skills"
 	class="w-full h-fit min-h-screen flex items-center justify-center px-10 py-8 lg:flex-row flex-col"
 >
-	<div class="lg:mr-32 mr-0 max-w-2xl text-justify">
-		<h2 class="font-bold text-2xl mb-2">Developer experience</h2>
-		<p>
+	<div class="lg:mr-32 mr-0 max-w-2xl">
+		<h2 class="dev-exp animate-gradient font-bold text-2xl mb-2">
+			Developer experience
+		</h2>
+		<p class="text-lg">
 			I started programming with Python since I was 14 years old. I
 			learnt it from a coding school in my city. Eventually, I decided
 			to explore programming on my own.
@@ -37,8 +39,12 @@
 			like R, Machine Learning and Computer Vision. I explore web development
 			as a hobby, watching YouTube tutorials as my main source of knowledge.
 		</p>
-		<h2 class="font-bold text-2xl mb-2 mt-8">Other skills</h2>
-		<p>
+		<h2
+			class="other-skills animate-gradient font-bold text-2xl mb-2 mt-8"
+		>
+			Other skills
+		</h2>
+		<p class="text-lg">
 			Besides programming, I have other hobbies including music and
 			playing Valorant.
 			<br /><br />
@@ -121,5 +127,37 @@
 
 		// appear with transition once
 		animation: appear 500ms ease-in-out 1;
+	}
+
+	.dev-exp {
+		background: linear-gradient(
+			90deg,
+			#ff8080 0%,
+			#ffba92 55%,
+			#c6f1d6 90%
+		);
+
+		background-size: 300%;
+
+		background-clip: text;
+		-webkit-background-clip: text;
+
+		-webkit-text-fill-color: transparent;
+	}
+
+	.other-skills {
+		background: linear-gradient(
+			90deg,
+			#09ff00 0%,
+			#00e7ff 40%,
+			#a29aff 80%
+		);
+
+		background-size: 300%;
+
+		background-clip: text;
+		-webkit-background-clip: text;
+
+		-webkit-text-fill-color: transparent;
 	}
 </style>
