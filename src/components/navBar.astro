@@ -30,7 +30,7 @@
 			>
 		</nav>
 	</aside>
-	<div id="navbar" class="absolute top-0 w-full hidden lg:flex">
+	<div id="navbar" class="absolute top-0 w-full hidden md:flex">
 		<div
 			id="navbar-div"
 			class="pt-2 mr-5 uppercase w-full pb-1 flex flex-row justify-end"
@@ -150,14 +150,9 @@
 		max-width: 10rem;
 		min-height: 100vh;
 	}
-
-	/* .hamburger-menu:has(input:checked) + .sidebar {
-		translate: 0;
-	} */
 </style>
 
 <script defer is:inline>
-	// fetch all .sidebar-url elements
 	const sidebar = document.querySelectorAll(".sidebar-url");
 	const hamburger = document.querySelector(".hamburger-menu");
 	const checkbox = document.querySelector("input");
