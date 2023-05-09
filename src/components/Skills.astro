@@ -24,36 +24,38 @@
 	class="w-full h-fit min-h-screen flex items-center justify-center px-10 py-8 lg:flex-row flex-col"
 >
 	<div class="lg:mr-32 mr-0 max-w-2xl">
-		<h2 class="dev-exp animate-gradient font-bold text-2xl mb-2">
-			Developer experience
-		</h2>
+		<h1 class="dev-exp font-bold text-3xl mb-2">Developer skills</h1>
 		<p class="text-lg">
 			I started programming with Python since I was 14 years old. I
-			learnt it from a coding school in my city. Eventually, I decided
+			learnt it from a coding centre in my area. Eventually, I decided
 			to explore programming on my own.
-			<br /><br />
-			In my journey of programming, I learnt image processing, web scraping,
-			Discord bot development and web development.
-			<br /><br />
-			In my college course, I learnt many data science related technologies
-			like R, Machine Learning and Computer Vision. I explore web development
-			as a hobby, watching YouTube tutorials as my main source of knowledge.
 		</p>
-		<h2
-			class="other-skills animate-gradient font-bold text-2xl mb-2 mt-8"
-		>
-			Other skills
+		<h2 class="web-dev animate-gradient font-bold text-2xl mb-2 mt-8">
+			Web Development
 		</h2>
 		<p class="text-lg">
-			Besides programming, I have other hobbies including music and
-			playing Valorant.
+			I started learning web development as a hobby. After being
+			confident with my skills in HTML, vanilla CSS and vanilla
+			Javascript; I started learning frontend frameworks such as React,
+			Svelte and Astro.
+		</p>
+		<h2
+			class="data-science animate-gradient font-bold text-2xl mb-2 mt-8"
+		>
+			Data Science
+		</h2>
+		<p class="text-lg">
+			In college, I learnt data science and worked with data using SAS
+			and R. I studied and carried out processes such as data cleaning,
+			data transformation and built machine learning models for
+			Predictive Analysis and Cluster Analysis.
+
 			<br /><br />
-			I play the guitar and piano decently. I have performed as a guitarist
-			in several performances throughout high school and college.
-			<br /><br />
-			I occasionally play Valorant with my friends and streamers. I have
-			produced Valorant content on my YouTube channel to practice my video
-			editing.
+			For example, I extracted medical data from a Kaggle notebook to predict
+			diabetes of patients. I cleaned the dataset by removing outliers,
+			and built models using Logistic Regression and Random Forest (just
+			to name a few). The results of the models have an average accuracy
+			of 75%!
 		</p>
 	</div>
 
@@ -129,8 +131,24 @@
 		animation: appear 500ms ease-in-out 1;
 	}
 
-	.dev-exp {
-		background: linear-gradient(90deg, #63b9ff 20%, #f0c808 40%);
+	.data-science {
+		background: linear-gradient(90deg, #63b9ff 10%, #f0c808 30%);
+
+		background-size: 110%;
+
+		background-clip: text;
+		-webkit-background-clip: text;
+
+		-webkit-text-fill-color: transparent;
+	}
+
+	.web-dev {
+		background: linear-gradient(
+			90deg,
+			#09ff00 0%,
+			#00e7ff 20%,
+			#a29aff 60%
+		);
 
 		background-size: 120%;
 
@@ -140,15 +158,10 @@
 		-webkit-text-fill-color: transparent;
 	}
 
-	.other-skills {
-		background: linear-gradient(
-			90deg,
-			#09ff00 0%,
-			#00e7ff 20%,
-			#a29aff 60%
-		);
+	.dev-exp {
+		background: linear-gradient(90deg, #ff7e7e 0%, #ffcdcd 50%);
 
-		background-size: 120%;
+		background-size: 150%;
 
 		background-clip: text;
 		-webkit-background-clip: text;
