@@ -17,6 +17,20 @@ const { title } = Astro.props;
 		/>
 		<meta name="author" content="Ryan" />
 		<meta name="generator" content={Astro.generator} />
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-DZ1QV69H0W"
+		></script>
+		<script lang="js">
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-DZ1QV69H0W");
+		</script>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<title>{title}</title>
 	</head>
