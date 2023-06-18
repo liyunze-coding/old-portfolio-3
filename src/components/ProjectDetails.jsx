@@ -4,8 +4,23 @@ import ChatTaskTic from "./projectComponents/projectMedia/chat-task-tic-thumbnai
 import Streamodoro from "./projectComponents/projectMedia/streamodoro.webp";
 import chessBotDemo from "./projectComponents/projectMedia/chess-bot-demo.webp";
 import spotifyOverlay from "./projectComponents/projectMedia/spotify_overlay.webp";
+import coworkingGuide from "./projectComponents/projectMedia/cowo.webp";
 
 const slides = [
+	{
+		name: "Coworking Guide",
+		description:
+			"A guide for new (and existing) coworking streamers on Twitch",
+		image: {
+			src: coworkingGuide,
+			alt: "Coworking Guide",
+		},
+		links: {
+			Demo: "https://coworking-guide.vercel.app/",
+			Github: "https://github.com/liyunze-coding/coworking-website",
+		},
+		tags: ["Astro", "Tailwind", "Markdown"],
+	},
 	{
 		name: "PetGPT",
 		description: "PetGPT is a UI clone of ChatGPT, inspired by CatGPT.",

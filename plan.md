@@ -24,12 +24,13 @@ Data science, web development.
 
 ## Projects
 
--    [ ] Chat-Task-Tic Overlay
--    [ ] Inertia
--    [ ] Chess bot
--    [ ] PetGPT
+-    [x] Coworking guide
+-    [x] Chat-Task-Tic Overlay
+-    [x] Inertia
+-    [x] Chess bot
+-    [x] PetGPT
 
 ## Contact
 
--    [ ] Email
--    [ ] Socials
+-    [x] Email
+-    [x] Socials

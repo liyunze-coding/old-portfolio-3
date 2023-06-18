@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./public/circle_logo.webp" width="100px">
+    <img src="./public/circle_logo.webp" width="100">
     <h1>ryanpython.me</h1>
     <p>The 3rd iteration of Ryan's personal website</p>
 </div>
