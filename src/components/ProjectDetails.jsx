@@ -75,12 +75,12 @@ const slides = [
 		tags: ["Javascript", "HTML", "CSS", "ComfyJS"],
 	},
 	{
-		name: "Spotify overlay",
+		name: "Spotify widget",
 		description:
-			"An OBS overlay that displays the current track that you're listening to on Spotify",
+			"An OBS widget that displays the current track that you're listening to on Spotify",
 		image: {
 			src: spotifyOverlay,
-			alt: "Spotify overlay",
+			alt: "Spotify widget",
 		},
 		links: {
 			Github: "https://github.com/liyunze-coding/spotify-widget-for-obs",
