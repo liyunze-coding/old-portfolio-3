@@ -53,8 +53,7 @@
 		return new Promise((resolve) => setTimeout(resolve, ms));
 	}
 
-	// change role every 3 seconds
-	setInterval(async () => {
+	async function intro() {
 		role = roles[counter];
 
 		typeOutRole();
@@ -67,7 +66,11 @@
 		if (counter == roles.length) {
 			counter = 0;
 		}
-	}, 5000);
+	}
+
+	intro();
+	// change role every 5 seconds
+	setInterval(intro, 5000);
 </script>
 
 <div
