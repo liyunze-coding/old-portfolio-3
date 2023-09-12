@@ -9,8 +9,7 @@ import coworkingGuide from "./projectComponents/projectMedia/cowo.webp";
 const slides = [
 	{
 		name: "Coworking Guide",
-		description:
-			"A guide for new (and existing) coworking streamers on Twitch",
+		description: "A guide for coworking streamers on Twitch",
 		image: {
 			src: coworkingGuide,
 			alt: "Coworking Guide",
@@ -35,26 +34,12 @@ const slides = [
 		tags: ["SvelteKit", "Tailwind", "Typescript"],
 	},
 	{
-		name: "Inertia",
+		name: "Chat-Task-Tic widget",
 		description:
-			"Inertia is inspired by Momentum, a Chrome extension that replaces the new tab page with a customizable dashboard featuring to-do lists, weather, and more.",
-		image: {
-			src: Inertia,
-			alt: "Inertia",
-		},
-		links: {
-			Demo: "https://liyunze-coding.github.io/inertia",
-			Github: "https://github.com/liyunze-coding/inertia",
-		},
-		tags: ["Svelte", "Typescript", "OpenWeatherMap API"],
-	},
-	{
-		name: "Chat-Task-Tic overlay",
-		description:
-			"A task list overlay for coworking and study streamers, allows users to submit tasks from Twitch chat.",
+			"A task list widget for coworking and study streamers, allows streamer and chatters to submit tasks from Twitch chat to stream widget.",
 		image: {
 			src: ChatTaskTic,
-			alt: "Chat-Task-Tic overlay",
+			alt: "Chat-Task-Tic widget",
 		},
 		links: {
 			Github: "https://github.com/liyunze-coding/chat-task-tic-overlay",
