@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from "svelte";
+
 	// Greeting
 	let date = new Date();
 	let hour = date.getHours();
@@ -13,64 +15,68 @@
 
 	// Roles
 	let roles = ["student", "developer", "streamer", "YouTuber"];
-	let roleState: string = "student";
+	let roleState: string = "";
 	let role: string;
 	let counter: number = 0;
-	let roleEmpty: boolean = false;
+	let roleEmpty: boolean = true;
+	const roleInterval: number = 50;
+	const roleUpdateDelay: number = 2000; // delay after updating
+	const roleRemoveDelay: number = 1000; // delay after removing
+	
+	function removeLastCharacter(str: string) {
+		return str.slice(0, -1);
+	}
 
-	function typeOutRole() {
-		// type out next role
-		if (roleEmpty) {
-			let type = setInterval(() => {
-				if (role[roleState.length]) {
-					roleState += role[roleState.length];
-				}
+	function addCharacter(str1: string, str2:string) {
+		// str1: incomplete string, add a character after this
+		// str2: complete string, add a character from this
 
-				if (roleState.length == role.length) {
-					clearInterval(type);
-					roleEmpty = false;
-				}
-			}, 70);
+		let str1Length = str1.length;
+		let str2Length = str2.length;
+
+		if (str1Length < str2Length) {
+			return str1 + str2[str1Length];
+		} else {
+			return str1;
 		}
 	}
 
-	function backspaceRole() {
-		// backspace on current role
-		if (!roleEmpty) {
-			let backspace = setInterval(() => {
-				roleState = roleState.slice(0, -1);
-
-				if (roleState.length === 0) {
-					clearInterval(backspace);
-					roleEmpty = true;
-				}
-			}, 70);
-		}
-	}
-
-	// sleep function
 	function sleep(ms: number) {
 		return new Promise((resolve) => setTimeout(resolve, ms));
 	}
 
-	async function intro() {
+	async function animateRoles() {
 		role = roles[counter];
 
-		typeOutRole();
+		if (roleEmpty) {
+			for (let i = 0; i < role.length; i++) {
+				roleState = addCharacter(roleState, role);
+				await sleep(roleInterval);
+			}
+			await sleep(roleUpdateDelay);
+			roleEmpty = false;
 
-		await sleep(4000);
-		backspaceRole();
-
-		counter++;
-
-		if (counter == roles.length) {
-			counter = 0;
+			animateRoles();
+		} else {
+			for (let i = 0; i < role.length; i++) {
+				roleState = removeLastCharacter(roleState);
+				await sleep(roleInterval);
+			}
+			await sleep(roleRemoveDelay);
+			if (counter < roles.length - 1) {
+				counter++;
+			} else {
+				counter = 0;
+			}
+			roleEmpty = true;
+			animateRoles();
 		}
 	}
 
-	intro();
-	// change role every 5 seconds
-	setInterval(intro, 5000);
+	// after window finish loading, call animateRoles()
+	onMount(() => {
+		animateRoles();
+	});
 </script>
 
 <div
