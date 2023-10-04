@@ -89,7 +89,7 @@
 			id="name"
 			class="animate-gradient text-5xl text-center py-10 font-bold w-fit"
 		>
-			RyanPython
+			RythonDev
 		</div>
 		<div class="text-2xl lg:text-4xl text-center translate-x-3 -z-10">
 			I am a <span id="occupation">{roleState}</span><span
